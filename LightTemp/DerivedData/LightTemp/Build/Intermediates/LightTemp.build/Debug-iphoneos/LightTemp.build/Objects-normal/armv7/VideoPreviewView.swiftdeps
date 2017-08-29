@@ -1,0 +1,405 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "VideoPreviewView"
+provides-nominal:
+- "C9LightTemp16VideoPreviewView"
+provides-member:
+- ["C9LightTemp16VideoPreviewView", ""]
+provides-dynamic-lookup:
+- "layerClass"
+- "session"
+- "updateVideoOrientationForDeviceOrientation"
+- "videoPreviewLayer"
+depends-top-level:
+- "AVCaptureSession"
+- "AVCaptureVideoOrientation"
+- "AVCaptureVideoPreviewLayer"
+- "AnyClass"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- !private "UIDevice"
+- "UIDeviceOrientation"
+- "UIView"
+- "VideoPreviewView"
+- !private "||"
+depends-member:
+- !private ["CSo19AVCaptureConnection", "videoOrientation"]
+- ["OSC25AVCaptureVideoOrientation", "landscapeLeft"]
+- ["OSC25AVCaptureVideoOrientation", "landscapeRight"]
+- ["OSC25AVCaptureVideoOrientation", "portrait"]
+- ["OSC25AVCaptureVideoOrientation", "portraitUpsideDown"]
+- !private ["CSo26AVCaptureVideoPreviewLayer", "connection"]
+- !private ["CSo26AVCaptureVideoPreviewLayer", "session"]
+- !private ["Ps9AnyObject", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps9AnyObject", "UIDevice"]
+- !private ["Ps9AnyObject", "connection"]
+- !private ["Ps9AnyObject", "current"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "layer"]
+- !private ["Ps9AnyObject", "orientation"]
+- !private ["Ps9AnyObject", "orientationMap"]
+- !private ["Ps9AnyObject", "session"]
+- !private ["Ps9AnyObject", "videoOrientation"]
+- !private ["Ps9AnyObject", "videoPreviewLayer"]
+- ["Ps9AnyObject", ""]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["CSo7CALayer", "connection"]
+- !private ["CSo7CALayer", "session"]
+- !private ["PSo15CALayerDelegate", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo15CALayerDelegate", "UIDevice"]
+- !private ["PSo15CALayerDelegate", "init"]
+- !private ["PSo15CALayerDelegate", "layer"]
+- !private ["PSo15CALayerDelegate", "orientationMap"]
+- !private ["PSo15CALayerDelegate", "videoPreviewLayer"]
+- ["PSo15CALayerDelegate", ""]
+- !private ["PSo13CAMediaTiming", "connection"]
+- !private ["PSo13CAMediaTiming", "session"]
+- !private ["Ps7CVarArg", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps7CVarArg", "UIDevice"]
+- !private ["Ps7CVarArg", "connection"]
+- !private ["Ps7CVarArg", "current"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "layer"]
+- !private ["Ps7CVarArg", "orientation"]
+- !private ["Ps7CVarArg", "orientationMap"]
+- !private ["Ps7CVarArg", "session"]
+- !private ["Ps7CVarArg", "subscript"]
+- !private ["Ps7CVarArg", "videoOrientation"]
+- !private ["Ps7CVarArg", "videoPreviewLayer"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps10Collection", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps28CustomDebugStringConvertible", "UIDevice"]
+- !private ["Ps28CustomDebugStringConvertible", "connection"]
+- !private ["Ps28CustomDebugStringConvertible", "current"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "layer"]
+- !private ["Ps28CustomDebugStringConvertible", "orientation"]
+- !private ["Ps28CustomDebugStringConvertible", "orientationMap"]
+- !private ["Ps28CustomDebugStringConvertible", "session"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "videoOrientation"]
+- !private ["Ps28CustomDebugStringConvertible", "videoPreviewLayer"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps23CustomStringConvertible", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps23CustomStringConvertible", "UIDevice"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "connection"]
+- !private ["Ps23CustomStringConvertible", "current"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "layer"]
+- !private ["Ps23CustomStringConvertible", "orientation"]
+- !private ["Ps23CustomStringConvertible", "orientationMap"]
+- !private ["Ps23CustomStringConvertible", "session"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Ps23CustomStringConvertible", "videoOrientation"]
+- !private ["Ps23CustomStringConvertible", "videoPreviewLayer"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Vs10Dictionary", "subscript"]
+- !private ["Ps9Equatable", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps9Equatable", "UIDevice"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "connection"]
+- !private ["Ps9Equatable", "current"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "isLandscape"]
+- !private ["Ps9Equatable", "isPortrait"]
+- ["Ps9Equatable", "landscapeLeft"]
+- ["Ps9Equatable", "landscapeRight"]
+- !private ["Ps9Equatable", "layer"]
+- !private ["Ps9Equatable", "orientation"]
+- !private ["Ps9Equatable", "orientationMap"]
+- ["Ps9Equatable", "portrait"]
+- ["Ps9Equatable", "portraitUpsideDown"]
+- !private ["Ps9Equatable", "session"]
+- !private ["Ps9Equatable", "videoOrientation"]
+- !private ["Ps9Equatable", "videoPreviewLayer"]
+- ["Ps9Equatable", ""]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
+- !private ["Ps8Hashable", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps8Hashable", "UIDevice"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "connection"]
+- !private ["Ps8Hashable", "current"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "isLandscape"]
+- !private ["Ps8Hashable", "isPortrait"]
+- ["Ps8Hashable", "landscapeLeft"]
+- ["Ps8Hashable", "landscapeRight"]
+- !private ["Ps8Hashable", "layer"]
+- !private ["Ps8Hashable", "orientation"]
+- !private ["Ps8Hashable", "orientationMap"]
+- ["Ps8Hashable", "portrait"]
+- ["Ps8Hashable", "portraitUpsideDown"]
+- !private ["Ps8Hashable", "session"]
+- !private ["Ps8Hashable", "videoOrientation"]
+- !private ["Ps8Hashable", "videoPreviewLayer"]
+- ["Ps8Hashable", ""]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSo8NSCoding", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo8NSCoding", "UIDevice"]
+- !private ["PSo8NSCoding", "connection"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "layer"]
+- !private ["PSo8NSCoding", "orientationMap"]
+- !private ["PSo8NSCoding", "session"]
+- !private ["PSo8NSCoding", "videoPreviewLayer"]
+- ["PSo8NSCoding", ""]
+- ["CSo8NSObject", "AVCaptureSession"]
+- ["CSo8NSObject", "AVCaptureVideoOrientation"]
+- ["CSo8NSObject", "AVCaptureVideoPreviewLayer"]
+- ["CSo8NSObject", "AnyClass"]
+- !private ["CSo8NSObject", "UIDevice"]
+- ["CSo8NSObject", "UIDeviceOrientation"]
+- !private ["CSo8NSObject", "connection"]
+- !private ["CSo8NSObject", "current"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "layer"]
+- ["CSo8NSObject", "layerClass"]
+- !private ["CSo8NSObject", "orientation"]
+- ["CSo8NSObject", "orientationMap"]
+- ["CSo8NSObject", "session"]
+- ["CSo8NSObject", "updateVideoOrientationForDeviceOrientation"]
+- !private ["CSo8NSObject", "videoOrientation"]
+- ["CSo8NSObject", "videoPreviewLayer"]
+- !private ["PSo16NSObjectProtocol", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo16NSObjectProtocol", "UIDevice"]
+- !private ["PSo16NSObjectProtocol", "connection"]
+- !private ["PSo16NSObjectProtocol", "current"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "layer"]
+- !private ["PSo16NSObjectProtocol", "orientation"]
+- !private ["PSo16NSObjectProtocol", "orientationMap"]
+- !private ["PSo16NSObjectProtocol", "session"]
+- !private ["PSo16NSObjectProtocol", "videoOrientation"]
+- !private ["PSo16NSObjectProtocol", "videoPreviewLayer"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["Ps16RawRepresentable", "isLandscape"]
+- !private ["Ps16RawRepresentable", "isPortrait"]
+- ["Ps16RawRepresentable", "landscapeLeft"]
+- ["Ps16RawRepresentable", "landscapeRight"]
+- ["Ps16RawRepresentable", "portrait"]
+- ["Ps16RawRepresentable", "portraitUpsideDown"]
+- !private ["Ps8Sequence", "subscript"]
+- !private ["PSo29UIAccessibilityIdentification", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo29UIAccessibilityIdentification", "UIDevice"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "layer"]
+- !private ["PSo29UIAccessibilityIdentification", "orientationMap"]
+- !private ["PSo29UIAccessibilityIdentification", "videoPreviewLayer"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- !private ["PSo12UIAppearance", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo12UIAppearance", "UIDevice"]
+- !private ["PSo12UIAppearance", "init"]
+- !private ["PSo12UIAppearance", "layer"]
+- !private ["PSo12UIAppearance", "orientationMap"]
+- !private ["PSo12UIAppearance", "videoPreviewLayer"]
+- ["PSo12UIAppearance", ""]
+- !private ["PSo21UIAppearanceContainer", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo21UIAppearanceContainer", "UIDevice"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- !private ["PSo21UIAppearanceContainer", "layer"]
+- !private ["PSo21UIAppearanceContainer", "orientationMap"]
+- !private ["PSo21UIAppearanceContainer", "videoPreviewLayer"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["PSo17UICoordinateSpace", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo17UICoordinateSpace", "UIDevice"]
+- !private ["PSo17UICoordinateSpace", "init"]
+- !private ["PSo17UICoordinateSpace", "layer"]
+- !private ["PSo17UICoordinateSpace", "orientationMap"]
+- !private ["PSo17UICoordinateSpace", "videoPreviewLayer"]
+- ["PSo17UICoordinateSpace", ""]
+- !private ["CSo8UIDevice", "current"]
+- !private ["CSo8UIDevice", "orientation"]
+- !private ["OSC19UIDeviceOrientation", "isLandscape"]
+- !private ["OSC19UIDeviceOrientation", "isPortrait"]
+- ["OSC19UIDeviceOrientation", "landscapeLeft"]
+- ["OSC19UIDeviceOrientation", "landscapeRight"]
+- ["OSC19UIDeviceOrientation", "portrait"]
+- ["OSC19UIDeviceOrientation", "portraitUpsideDown"]
+- !private ["PSo13UIDynamicItem", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo13UIDynamicItem", "UIDevice"]
+- !private ["PSo13UIDynamicItem", "init"]
+- !private ["PSo13UIDynamicItem", "layer"]
+- !private ["PSo13UIDynamicItem", "orientationMap"]
+- !private ["PSo13UIDynamicItem", "videoPreviewLayer"]
+- ["PSo13UIDynamicItem", ""]
+- !private ["PSo18UIFocusEnvironment", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo18UIFocusEnvironment", "UIDevice"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- !private ["PSo18UIFocusEnvironment", "layer"]
+- !private ["PSo18UIFocusEnvironment", "orientationMap"]
+- !private ["PSo18UIFocusEnvironment", "videoPreviewLayer"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo11UIFocusItem", "UIDevice"]
+- !private ["PSo11UIFocusItem", "init"]
+- !private ["PSo11UIFocusItem", "layer"]
+- !private ["PSo11UIFocusItem", "orientationMap"]
+- !private ["PSo11UIFocusItem", "videoPreviewLayer"]
+- ["PSo11UIFocusItem", ""]
+- ["CSo11UIResponder", "AVCaptureSession"]
+- ["CSo11UIResponder", "AVCaptureVideoOrientation"]
+- ["CSo11UIResponder", "AVCaptureVideoPreviewLayer"]
+- ["CSo11UIResponder", "AnyClass"]
+- !private ["CSo11UIResponder", "UIDevice"]
+- ["CSo11UIResponder", "UIDeviceOrientation"]
+- ["CSo11UIResponder", "init"]
+- !private ["CSo11UIResponder", "layer"]
+- ["CSo11UIResponder", "layerClass"]
+- ["CSo11UIResponder", "orientationMap"]
+- ["CSo11UIResponder", "session"]
+- ["CSo11UIResponder", "updateVideoOrientationForDeviceOrientation"]
+- ["CSo11UIResponder", "videoPreviewLayer"]
+- !private ["PSo30UIResponderStandardEditActions", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo30UIResponderStandardEditActions", "UIDevice"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "layer"]
+- !private ["PSo30UIResponderStandardEditActions", "orientationMap"]
+- !private ["PSo30UIResponderStandardEditActions", "videoPreviewLayer"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- !private ["PSo18UITraitEnvironment", "AVCaptureVideoPreviewLayer"]
+- !private ["PSo18UITraitEnvironment", "UIDevice"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- !private ["PSo18UITraitEnvironment", "layer"]
+- !private ["PSo18UITraitEnvironment", "orientationMap"]
+- !private ["PSo18UITraitEnvironment", "videoPreviewLayer"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "AVCaptureSession"]
+- ["CSo6UIView", "AVCaptureVideoOrientation"]
+- ["CSo6UIView", "AVCaptureVideoPreviewLayer"]
+- ["CSo6UIView", "AnyClass"]
+- !private ["CSo6UIView", "UIDevice"]
+- ["CSo6UIView", "UIDeviceOrientation"]
+- ["CSo6UIView", "init"]
+- !private ["CSo6UIView", "layer"]
+- ["CSo6UIView", "layerClass"]
+- ["CSo6UIView", "orientationMap"]
+- ["CSo6UIView", "session"]
+- ["CSo6UIView", "updateVideoOrientationForDeviceOrientation"]
+- ["CSo6UIView", "videoPreviewLayer"]
+- ["CSo6UIView", ""]
+- ["C9LightTemp16VideoPreviewView", "AVCaptureSession"]
+- ["C9LightTemp16VideoPreviewView", "AVCaptureVideoOrientation"]
+- ["C9LightTemp16VideoPreviewView", "AVCaptureVideoPreviewLayer"]
+- ["C9LightTemp16VideoPreviewView", "AnyClass"]
+- !private ["C9LightTemp16VideoPreviewView", "UIDevice"]
+- ["C9LightTemp16VideoPreviewView", "UIDeviceOrientation"]
+- ["C9LightTemp16VideoPreviewView", "deinit"]
+- ["C9LightTemp16VideoPreviewView", "init"]
+- !private ["C9LightTemp16VideoPreviewView", "layer"]
+- ["C9LightTemp16VideoPreviewView", "layerClass"]
+- !private ["C9LightTemp16VideoPreviewView", "orientationMap"]
+- ["C9LightTemp16VideoPreviewView", "session"]
+- ["C9LightTemp16VideoPreviewView", "updateVideoOrientationForDeviceOrientation"]
+- ["C9LightTemp16VideoPreviewView", "videoPreviewLayer"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIDevice"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "init"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "layer"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "orientationMap"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "videoPreviewLayer"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", ""]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "AVCaptureVideoPreviewLayer"]
+- !private ["Ps9_Hashable", "UIDevice"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "connection"]
+- !private ["Ps9_Hashable", "current"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "isLandscape"]
+- !private ["Ps9_Hashable", "isPortrait"]
+- ["Ps9_Hashable", "landscapeLeft"]
+- ["Ps9_Hashable", "landscapeRight"]
+- !private ["Ps9_Hashable", "layer"]
+- !private ["Ps9_Hashable", "orientation"]
+- !private ["Ps9_Hashable", "orientationMap"]
+- ["Ps9_Hashable", "portrait"]
+- ["Ps9_Hashable", "portraitUpsideDown"]
+- !private ["Ps9_Hashable", "session"]
+- !private ["Ps9_Hashable", "videoOrientation"]
+- !private ["Ps9_Hashable", "videoPreviewLayer"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+depends-nominal:
+- !private "CSo19AVCaptureConnection"
+- "OSC25AVCaptureVideoOrientation"
+- !private "CSo26AVCaptureVideoPreviewLayer"
+- "Ps9AnyObject"
+- !private "Sb"
+- !private "CSo7CALayer"
+- "PSo15CALayerDelegate"
+- !private "PSo13CAMediaTiming"
+- "Ps7CVarArg"
+- !private "Ps10Collection"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- "Ps8Hashable"
+- !private "Ps25LosslessStringConvertible"
+- "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "Ps16RawRepresentable"
+- !private "Ps8Sequence"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo17UICoordinateSpace"
+- !private "CSo8UIDevice"
+- "OSC19UIDeviceOrientation"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "PSo11UIFocusItem"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "C9LightTemp16VideoPreviewView"
+- "Ps37_DefaultCustomPlaygroundQuickLookable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps9_Hashable"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Metal.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Photos.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AudioToolbox.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+interface-hash: "87d83a99b84ae1efcad68ff1e3c13f15"
