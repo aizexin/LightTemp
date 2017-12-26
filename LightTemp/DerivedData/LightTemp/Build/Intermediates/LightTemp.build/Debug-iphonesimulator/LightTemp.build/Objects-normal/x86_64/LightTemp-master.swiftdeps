@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "c62bd40db8dc40bd841dc516a39b775c"
-build_time: [556542745, 970019000]
-inputs:
-  "/Users/zhou/workspace/ios/LightTemp/LightTemp/ViewController.swift": [556542743, 0]
-  "/Users/zhou/workspace/ios/LightTemp/LightTemp/AppDelegate.swift": [556542743, 0]

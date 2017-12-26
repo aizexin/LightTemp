@@ -55,17 +55,12 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
 
     func defaultDevice() -> AVCaptureDevice {
-        if let device = AVCaptureDevice.defaultDevice(withDeviceType: .builtInDualCamera,
-                                                      mediaType: AVMediaTypeVideo,
-                                                      position: .back) {
-            return device // use dual camera on supported devices
-        } else if let device = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera,
-                                                             mediaType: AVMediaTypeVideo,
-                                                             position: .back) {
+        if let device = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera, for: AVMediaType.video, position: AVCaptureDevice.Position.back) {
             return device // use default back facing camera otherwise
         } else {
             fatalError("All supported devices are expected to have at least one of the queried capture devices.")
         }
+        
     }
 
     func configureCaptureSession(_ completionHandler: ((_ success: Bool) -> Void)) {
@@ -90,7 +85,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
         // Configure the session.
         self.captureSession.beginConfiguration()
-        self.captureSession.sessionPreset = AVCaptureSessionPresetPhoto
+        self.captureSession.sessionPreset = AVCaptureSession.Preset.photo
         self.captureSession.addInput(videoInput)
         self.captureSession.addOutput(capturePhotoOutput)
         self.captureSession.commitConfiguration()
@@ -102,11 +97,11 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     func snapPhoto() {
         guard let capturePhotoOutput = self.capturePhotoOutput else { return }
-        let videoPreviewLayerOrientation = videoPreviewView.videoPreviewLayer.connection.videoOrientation
+        let videoPreviewLayerOrientation = videoPreviewView.videoPreviewLayer.connection?.videoOrientation
 
         // Update the photo output's connection to match the video orientation of the video preview layer.
-        if let photoOutputConnection = capturePhotoOutput.connection(withMediaType: AVMediaTypeVideo) {
-            photoOutputConnection.videoOrientation = videoPreviewLayerOrientation
+        if let photoOutputConnection = capturePhotoOutput.connection(with: AVMediaType.video) {
+            photoOutputConnection.videoOrientation = videoPreviewLayerOrientation!
         }
 
         let photoSettings = createSetting()
@@ -115,10 +110,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
 
     func createSetting() -> AVCapturePhotoSettings {
-        let availableRawFormatType = capturePhotoOutput.availableRawPhotoPixelFormatTypes.first!
-
-        let photoSettings = AVCapturePhotoSettings(rawPixelFormatType: availableRawFormatType.uint32Value,
-                               processedFormat: [AVVideoCodecKey : AVVideoCodecJPEG])
+//        let availableRawFormatType = capturePhotoOutput.availableRawPhotoPixelFormatTypes.first!
+//        let photoSettings = AVCapturePhotoSettings(rawPixelFormatType: availableRawFormatType.uint32Value,
+//                               processedFormat: [AVVideoCodecKey : AVVideoCodecJPEG])
+        let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG, AVVideoCompressionPropertiesKey : [AVVideoQualityKey : 1.0]] as [String : Any])
 
         photoSettings.flashMode = .off
 
@@ -174,9 +169,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }, completionHandler: completionHandler)
     }
 
-    public func capture(_ captureOutput: AVCapturePhotoOutput,
-                        didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?,
-                        previewPhotoSampleBuffer: CMSampleBuffer?,
+    public func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+                            didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+                            previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
                         resolvedSettings: AVCaptureResolvedPhotoSettings,
                         bracketSettings: AVCaptureBracketedStillImageSettings?,
                         error: Error?) {
@@ -189,9 +184,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.previewPhotoSampleBuffer = previewPhotoSampleBuffer
     }
 
-    func capture(_ captureOutput: AVCapturePhotoOutput,
-                 didFinishProcessingRawPhotoSampleBuffer rawSampleBuffer: CMSampleBuffer?,
-                 previewPhotoSampleBuffer: CMSampleBuffer?,
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+                     didFinishProcessingRawPhoto rawSampleBuffer: CMSampleBuffer?,
+                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
                  resolvedSettings: AVCaptureResolvedPhotoSettings,
                  bracketSettings: AVCaptureBracketedStillImageSettings?,
                  error: Error?) {
@@ -204,8 +199,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.previewRawSampleBuffer = previewPhotoSampleBuffer
     }
 
-    public func capture(_ captureOutput: AVCapturePhotoOutput,
-                        didFinishCaptureForResolvedSettings resolvedSettings: AVCaptureResolvedPhotoSettings,
+    public func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+                            didFinishCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings,
                         error: Error?) {
         guard error == nil else {
             print("Error in capture process: \(String(describing: error))")
@@ -224,6 +219,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                         print("Error adding RAW+JPEG photo to library: \(String(describing: error))")
                     }
             })
+        } else {
+            print("-------")
         }
     }
 
