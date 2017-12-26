@@ -11,9 +11,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var capturePhotoOutput: AVCapturePhotoOutput!
     var isCaptureSessionConfigured = false
     var photoSampleBuffer: CMSampleBuffer!
-    var previewPhotoSampleBuffer: CMSampleBuffer?
     var rawSampleBuffer: CMSampleBuffer!
-    var previewRawSampleBuffer: CMSampleBuffer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,48 +122,23 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         return URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(UUID().uuidString).\(typeExtension)")
     }
 
-    func saveRAWPlusJPEGPhotoLibrary(rawSampleBuffer: CMSampleBuffer,
-                                     rawPreviewSampleBuffer: CMSampleBuffer?,
+    func saveRAWPlusJPEGPhotoLibrary(rawSampleBuffer: CMSampleBuffer?,
                                      photoSampleBuffer: CMSampleBuffer,
-                                     previewSampleBuffer: CMSampleBuffer?,
                                      completionHandler: ((_ success: Bool, _ error: Error?) -> Void)?) {
         guard let jpegData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
             forJPEGSampleBuffer: photoSampleBuffer,
-            previewPhotoSampleBuffer: previewSampleBuffer)
+            previewPhotoSampleBuffer: nil)
             else {
                 print("Unable to create JPEG data.")
                 completionHandler?(false, nil)
                 return
         }
 
-        guard let dngData = AVCapturePhotoOutput.dngPhotoDataRepresentation(
-            forRawSampleBuffer: rawSampleBuffer,
-            previewPhotoSampleBuffer: rawPreviewSampleBuffer)
-            else {
-                print("Unable to create DNG data.")
-                completionHandler?(false, nil)
-                return
-        }
-
-        let dngFileURL = self.makeUniqueTempFileURL(typeExtension: "dng")
-        do {
-            try dngData.write(to: dngFileURL, options: [])
-        } catch let error as NSError {
-            print("Unable to write DNG file.")
-            completionHandler?(false, error)
-            return
-        }
-
-        let imageFilter = CIFilter(imageURL: dngFileURL, options: nil)
-        let temperature = imageFilter?.value(forKey: kCIInputNeutralTemperatureKey)
-        print("temperature: \(String(describing: temperature))")
-
         PHPhotoLibrary.shared().performChanges( {
             let creationRequest = PHAssetCreationRequest.forAsset()
             let creationOptions = PHAssetResourceCreationOptions()
             creationOptions.shouldMoveFile = true
             creationRequest.addResource(with: .photo, data: jpegData, options: nil)
-            creationRequest.addResource(with: .alternatePhoto, fileURL: dngFileURL, options: creationOptions)
         }, completionHandler: completionHandler)
     }
 
@@ -181,7 +154,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
 
         self.photoSampleBuffer = photoSampleBuffer
-        self.previewPhotoSampleBuffer = previewPhotoSampleBuffer
     }
 
     func photoOutput(_ captureOutput: AVCapturePhotoOutput,
@@ -196,7 +168,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
 
         self.rawSampleBuffer = rawSampleBuffer
-        self.previewRawSampleBuffer = previewPhotoSampleBuffer
     }
 
     public func photoOutput(_ captureOutput: AVCapturePhotoOutput,
@@ -207,11 +178,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             return
         }
 
-        if let rawSampleBuffer = self.rawSampleBuffer, let photoSampleBuffer = self.photoSampleBuffer {
+        if  let photoSampleBuffer = self.photoSampleBuffer {
             saveRAWPlusJPEGPhotoLibrary(rawSampleBuffer: rawSampleBuffer,
-                                        rawPreviewSampleBuffer: self.previewRawSampleBuffer,
                                         photoSampleBuffer: photoSampleBuffer,
-                                        previewSampleBuffer: self.previewPhotoSampleBuffer,
                                         completionHandler: { success, error in
                     if success {
                         print("Added RAW+JPEG photo to library.")
