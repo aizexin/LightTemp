@@ -216,9 +216,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let G  = Float(hexStringToInt(from: gString))
         let B  = Float(hexStringToInt(from: bString))
         
-//        let xCoordinate = 2.7689 * rvalue + 1.75157 * gvalue + 1.1302 * bvalue
-//        let yCoordinate = rvalue + 4.5907 * gvalue + 0.0601 * bvalue
-////        let zCoordinate = 0.0565 * gvalue + 5.5943 * bvalue
         let X = (-0.14282) * (R) + (1.54924) * (G) + (-0.95641) * (B)
         let Y = (-0.32466) * (R) + (1.57837) * (G) + (-0.73191) * (B)
         let Z = (-0.68202) * (R) + (0.77073) * (G) + (0.56332) * (B)
