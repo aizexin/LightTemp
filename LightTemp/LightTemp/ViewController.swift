@@ -2,9 +2,12 @@ import UIKit
 import AVFoundation
 import Photos
 import Foundation
+import ChameleonFramework
 
 class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
+    @IBOutlet weak var kLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var videoPreviewView: VideoPreviewView!
 
     var captureSession: AVCaptureSession!
@@ -108,9 +111,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
 
     func createSetting() -> AVCapturePhotoSettings {
-//        let availableRawFormatType = capturePhotoOutput.availableRawPhotoPixelFormatTypes.first!
-//        let photoSettings = AVCapturePhotoSettings(rawPixelFormatType: availableRawFormatType.uint32Value,
-//                               processedFormat: [AVVideoCodecKey : AVVideoCodecJPEG])
+
         let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG, AVVideoCompressionPropertiesKey : [AVVideoQualityKey : 1.0]] as [String : Any])
 
         photoSettings.flashMode = .off
@@ -133,13 +134,11 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 completionHandler?(false, nil)
                 return
         }
+        
+        //获得照片平均色
+        let image = UIImage.init(data: jpegData)
+        self.colorView.backgroundColor = AverageColorFromImage(image!)
 
-        PHPhotoLibrary.shared().performChanges( {
-            let creationRequest = PHAssetCreationRequest.forAsset()
-            let creationOptions = PHAssetResourceCreationOptions()
-            creationOptions.shouldMoveFile = true
-            creationRequest.addResource(with: .photo, data: jpegData, options: nil)
-        }, completionHandler: completionHandler)
     }
 
     public func photoOutput(_ captureOutput: AVCapturePhotoOutput,
