@@ -137,8 +137,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         //获得照片平均色
         let image = UIImage.init(data: jpegData)
-        self.colorView.backgroundColor = AverageColorFromImage(image!)
-
+        let averageColor = AverageColorFromImage(image!)
+        self.colorView.backgroundColor = averageColor
+        self.kLabel.text = "\(getTempWith(hexString: averageColor.hexValue()))"
+        
     }
 
     public func photoOutput(_ captureOutput: AVCapturePhotoOutput,
@@ -190,6 +192,41 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         } else {
             print("-------")
         }
+    }
+    
+    func getTempWith(hexString: String) -> CGFloat {
+
+        let hexString = (hexString as NSString).replacingOccurrences(of: "#", with: "")
+        
+        print("hexString= \(hexString)")
+        let rString = (hexString as NSString).substring(to: 2)
+        let gString = (hexString as NSString).substring(with: NSRange.init(location: 2, length: 2))
+        let bString = (hexString as NSString).substring(with: NSRange.init(location: 4, length: 2))
+        
+        let rvalue  = Float(hexStringToInt(from: rString))
+        let gvalue  = Float(hexStringToInt(from: gString))
+        let bvalue  = Float(hexStringToInt(from: bString))
+        
+        let xCoordinate = 2.7689 * rvalue + 1.75157 * gvalue + 1.1302 * bvalue
+        let yCoordinate = rvalue + 4.5907 * gvalue + 0.0601 * bvalue
+//        let zCoordinate = 0.0565 * gvalue + 5.5943 * bvalue
+        
+        let n = (xCoordinate - 0.3320)/(0.1858 - yCoordinate)
+        let cct = 437 * powf(n, 3) + 3601 * powf(n, 2) + 6831 * n + 5517
+        
+        return CGFloat(cct)
+    }
+    
+    func hexStringToInt(from:String) -> Int {
+        let str = from.uppercased()
+        var sum = 0
+        for i in str.utf8 {
+            sum = sum * 16 + Int(i) - 48 // 0-9 从48开始
+            if i >= 65 {                 // A-Z 从65开始，但有初始值10，所以应该是减去55
+                sum -= 7
+            }
+        }
+        return sum
     }
 
 }
